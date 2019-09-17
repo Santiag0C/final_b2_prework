@@ -10,9 +10,10 @@ RSpec.describe "students show page" do
 end
     it "can list the information of the students" do
 
-      visit "/"
+      visit "/all"
+      @santiago = Student.create(name:"santiago", grade: 8.8, corse_id: 3)
 
-      expect(page).to have_content(@student.name)
+      expect(page).to have_content(@santiago.name)
 
     end
   end
